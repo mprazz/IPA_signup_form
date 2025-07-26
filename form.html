@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição - Novos Sócios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8">
+    <div class="max-w-2xl mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="bg-white rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Junta-te a Nós!</h1>
+            <p class="text-gray-600">Unidos pela igualdade, unidos pelo Oeste - esta é a nossa IPA!</p>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <form id="membershipForm" action="https://formspree.io/f/manboonn" method="POST" class="space-y-6">
+                <!-- Dados Pessoais -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Dados Pessoais</h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">O teu email *</label>
+                            <input type="email" id="email" name="email" required placeholder="exemplo@email.com"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Como te chamas? *</label>
+                            <input type="text" id="fullName" name="nome_completo" required placeholder="O teu nome completo"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Onde moras? *</label>
+                            <input type="text" id="address" name="morada" required placeholder="Rua, número, andar, código postal - conta-nos tudo!"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">A tua cidade/vila *</label>
+                            <input type="text" id="city" name="localidade" required placeholder="Ex: Lisboa, Porto, Coimbra..."
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Quando nasceste? *</label>
+                                <input type="date" id="birthDate" name="data_nascimento" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Onde nasceste? *</label>
+                                <input type="text" id="birthPlace" name="naturalidade" required placeholder="A tua terra natal"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">O teu NIF *</label>
+                                <input type="text" id="nif" name="nif" required placeholder="123456789"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Como te podemos contactar? *</label>
+                                <input type="tel" id="phone" name="telefone" required placeholder="91 234 5678"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Confirma o teu email *</label>
+                            <input type="email" id="emailConfirm" name="email_confirmacao" required placeholder="O mesmo email de cima"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Qual é a tua formação? *</label>
+                                <select id="education" name="habilitacoes" required 
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                    <option value="">Escolhe uma opção...</option>
+                                    <option value="ensino-basico">Ensino Básico</option>
+                                    <option value="ensino-secundario">Ensino Secundário</option>
+                                    <option value="ensino-profissional">Ensino Profissional</option>
+                                    <option value="licenciatura">Licenciatura</option>
+                                    <option value="mestrado">Mestrado</option>
+                                    <option value="doutoramento">Doutoramento</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Em que trabalhas? *</label>
+                                <input type="text" id="profession" name="profissao" required placeholder="A tua profissão ou área"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forma de Pagamento -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">Como preferes pagar a quota anual?</h2>
+                    <p class="text-gray-600 mb-4">São apenas 18€ por ano - um café por mês! ☕</p>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <input type="radio" id="payment-transfer" name="forma_pagamento" value="transferencia" required
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                            <label for="payment-transfer" class="ml-3 text-sm text-gray-700">💳 Transferência Bancária</label>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="radio" id="payment-mbway" name="forma_pagamento" value="mbway" required
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                            <label for="payment-mbway" class="ml-3 text-sm text-gray-700">📱 MB WAY</label>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="radio" id="payment-cash" name="forma_pagamento" value="numerario" required
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                            <label for="payment-cash" class="ml-3 text-gray-700">💵 Dinheiro (presencialmente)</label>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="radio" id="payment-multibanco" name="forma_pagamento" value="multibanco" required
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                            <label for="payment-multibanco" class="ml-3 text-sm text-gray-700">🏧 Multibanco</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tratamento de Dados -->
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Sobre os teus dados 🔒</h2>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="dataProcessing" name="autorizacao_dados" value="sim" required 
+                               class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="dataProcessing" class="text-sm text-gray-700">
+                            Concordo que usem os meus dados para gerir a minha participação na associação (conforme o RGPD) *
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="communications" name="comunicacoes" value="sim"
+                               class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="communications" class="text-sm text-gray-700">
+                            Quero receber novidades sobre as nossas atividades e eventos (podes cancelar a qualquer momento)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-6">
+                    <button type="submit" 
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        ✨ Sim, quero ser sócie!
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Success Message (Hidden by default) -->
+        <div id="successMessage" class="hidden bg-green-50 border border-green-200 rounded-2xl p-6 mt-6">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <svg class="h-8 w-8 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-lg font-semibold text-green-800">Fantástico! Recebemos a tua candidatura! 🎉</h3>
+                    <p class="text-green-700 mt-1">Obrigado por quereres fazer parte da nossa família! Vamos entrar em contacto contigo muito em breve para te darmos as boas-vindas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            submitButton.textContent = 'A enviar...';
+            submitButton.disabled = true;
+            
+            fetch('https://formspree.io/f/manboonn', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    this.style.display = 'none';
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            })
+            .catch(error => {
+                alert('Erro ao enviar formulário. Tenta novamente ou contacta-nos em geral@somosipa.pt');
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+        });
+
+        // Email confirmation validation
+        document.getElementById('emailConfirm').addEventListener('blur', function(e) {
+            const email1 = document.getElementById('email').value;
+            const email2 = e.target.value;
+            
+            if (email1 && email2 && email1 !== email2) {
+                e.target.setCustomValidity('Os emails não coincidem');
+                e.target.style.borderColor = '#ef4444';
+            } else {
+                e.target.setCustomValidity('');
+                e.target.style.borderColor = '#d1d5db';
+            }
+        });
+
+        // Format NIF input (only numbers)
+        document.getElementById('nif').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 9);
+        });
+
+        // Format phone input
+        document.getElementById('phone').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 9);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964c860404665bd6',t:'MTc1MzQ1NTU5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
